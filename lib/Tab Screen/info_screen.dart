@@ -81,6 +81,7 @@ class _InfoScreenState extends State<InfoScreen> {
                     List<int> galleryPhotoIds = widget.attractionModel!.galleryPhoto.map((photo) => photo.id).toList();
 
                     attractionController.updateAttriction(widget.attractionModel!.id,galleryPhotoIds);
+                    Get.back();
                   }else{
                     attractionController.addAttriction().whenComplete((){
                       attractionController.fetchAttraction();
